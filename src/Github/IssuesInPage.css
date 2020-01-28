@@ -1,0 +1,8 @@
+.box-issues {
+  margin: 60px;
+  background-color: #fff;
+  border-bottom: 1px solid #d1d5da;
+  border-right: 1px solid #d1d5da;
+  border-left: 1px solid #d1d5da;
+  border-radius: 3px;
+}

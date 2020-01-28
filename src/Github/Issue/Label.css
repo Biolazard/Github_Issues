@@ -1,0 +1,46 @@
+label {
+  padding-right: 8px;
+}
+
+.label a {
+  font-weight: 600;
+  font-size: medium;
+  text-decoration: none;
+  border-radius: 3px;
+  padding: 4px;
+}
+
+.orange a {
+  color: black;
+  background-color: orange;
+}
+
+.red a {
+  color: white;
+  background-color: red;
+}
+
+.yellow a {
+  color: black;
+  background-color: yellow;
+}
+
+.violet a {
+  color: black;
+  background-color: violet;
+}
+
+.purlpe a {
+  color: black;
+  background-color: purple;
+}
+
+.green a {
+  color: white;
+  background-color: green;
+}
+
+.default a {
+  color: black;
+  background-color: cyan;
+}
