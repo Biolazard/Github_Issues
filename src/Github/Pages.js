@@ -11,6 +11,8 @@ export function Pages(props) {
   return (
     <div className="pagination">
       <ReactPaginate
+        disableInitialCallback={true}
+        initialPage={props.currentPage - 1}
         previousLabel={"PREV"}
         nextLabel={"NEXT"}
         breakLabel={"..."}

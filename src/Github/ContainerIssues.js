@@ -10,24 +10,26 @@ export class ContainerIssues extends React.Component {
     this.state = {
       data: [],
       infoRepository: {},
-      currentPage: 1
+      page: props.page ? props.page : 1
     };
   }
 
   componentDidMount() {
-    getData().then(response => this.setState({ data: response.data }));
+    getData(this.state.page).then(response =>
+      this.setState({ data: response.data })
+    );
     getInfoAboutRepo().then(response =>
       this.setState({ infoRepository: response.data })
     );
   }
 
-  getNewPage(n) {
-    console.log("ENTRATO");
-    getData(n).then(response => this.setState({ data: response.data }));
+  setNewUrl(n) {
+    let url = new URL(window.location.href);
+    url.searchParams.set("page", n);
+    document.location.href = url;
   }
 
   render() {
-    console.log(this.state.data);
     return (
       <div>
         <div className="box-container">
@@ -36,8 +38,9 @@ export class ContainerIssues extends React.Component {
           </div>
           <div>
             <Pages
+              currentPage={this.state.page}
               count={this.state.infoRepository.open_issues_count}
-              handleClick={n => this.getNewPage(n)}
+              handleClick={n => this.setNewUrl(n)}
             />
           </div>
         </div>

@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function getData(page = 1) {
   console.log("PAGE SELECTED", page);
-  const token = "40a9df4fa70f9da47bef4de5bef2d98724673e57";
+  const token = "071fc89109568ea081d01e2dcfbb5582d99c1b4f";
   const url = `https://api.github.com/repos/facebook/create-react-app/issues?page=${page}`;
   return await axios.get(url, {
     headers: { Authorization: `Bearer ${token}` }
@@ -10,7 +10,7 @@ export async function getData(page = 1) {
 }
 
 export async function getInfoAboutRepo() {
-  const token = "40a9df4fa70f9da47bef4de5bef2d98724673e57";
+  const token = "071fc89109568ea081d01e2dcfbb5582d99c1b4f";
   const url = "https://api.github.com/repos/facebook/create-react-app";
   return await axios.get(url, {
     headers: { Authorization: `Bearer ${token}` }
