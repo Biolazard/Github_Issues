@@ -5,9 +5,6 @@ import "./Pages.css";
 export function Pages(props) {
   const pageCount = Math.ceil((props.count ? props.count : 0) / 30);
 
-  // https://react-bootstrap.github.io/components/pagination/
-  // Per il css prendere spunto da questo
-
   return (
     <div className="pagination">
       <ReactPaginate
