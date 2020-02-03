@@ -5,12 +5,13 @@ import { InfoIssue } from "./InfoIssue";
 import { DescriptionIssue } from "./DescriptionIssue";
 
 export function Issue(props) {
-  const day = new Date(props.data.created_at).getDate().toString();
-  const month = new Date(props.data.created_at).toLocaleString("default", {
+  let date = new Date(props.data.created_at);
+  const day = date.getDate().toString();
+  const month = date.toLocaleString("default", {
     month: "long"
   });
-  const year = new Date(props.data.created_at).getFullYear();
-  const date = `${day} ${month} ${year}`;
+  const year = date.getFullYear();
+  date = String(`${day} ${month} ${year}`);
 
   return (
     <div className="flex-all-items">
@@ -30,4 +31,3 @@ export function Issue(props) {
     </div>
   );
 }
-

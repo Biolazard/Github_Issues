@@ -15,7 +15,7 @@ export function Label(props) {
   const classCss = css ? css : "default";
 
   return (
-    <div key={props.data.id} className="label">
+    <div className="label">
       <div className={classCss}>
         <a href={props.data.url}>{name}</a>
       </div>

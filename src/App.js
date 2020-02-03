@@ -7,13 +7,11 @@ function App() {
   const url = new URL(window.location.href);
   const page = url.searchParams.get("page");
   return (
-    <div>
-      <Router>
-        <Route exact path="/issue">
-          <ContainerIssues page={page} />
-        </Route>
-      </Router>
-    </div>
+    <Router>
+      <Route exact path="/issue">
+        <ContainerIssues page={page} />
+      </Route>
+    </Router>
   );
 }
 

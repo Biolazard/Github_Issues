@@ -31,19 +31,13 @@ export class ContainerIssues extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="box-container">
-          <div>
-            <IssuesInPage data={this.state.data} />
-          </div>
-          <div>
-            <Pages
-              currentPage={this.state.page}
-              count={this.state.infoRepository.open_issues_count}
-              handleClick={n => this.setNewUrl(n)}
-            />
-          </div>
-        </div>
+      <div className="box-container">
+        <IssuesInPage data={this.state.data} />
+        <Pages
+          currentPage={this.state.page}
+          count={this.state.infoRepository.open_issues_count}
+          handleClick={n => this.setNewUrl(n)}
+        />
       </div>
     );
   }
