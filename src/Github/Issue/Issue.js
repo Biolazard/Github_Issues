@@ -15,12 +15,14 @@ export function Issue(props) {
 
   return (
     <div className="flex-all-items">
-      <StatusIssues />
+      <StatusIssues state={props.data.state} />
       <div>
         <DescriptionIssue
           link={props.data.html_url}
           description={props.data.title}
           labels={props.data.labels}
+          data={props.data}
+          onClick={n => props.handleClick(n)}
         />
         <InfoIssue
           number={props.data.number}

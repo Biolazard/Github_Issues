@@ -46,18 +46,18 @@
   background-color: rgb(247, 248, 250);
 }
 
-
 .text-row {
   padding-right: 8px;
   padding-bottom: 4px;
 }
 
-.text-row a {
+.text-row span {
   color: black;
   font-weight: 600;
   text-decoration: none;
 }
 
-.text-row a:hover {
+.text-row span:hover {
   color: #0366d6;
+  cursor: pointer;
 }

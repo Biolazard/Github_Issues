@@ -6,7 +6,11 @@ export function IssuesInPage(props) {
   return (
     <div className="box-issues">
       {props.data.map((data, indexData) => (
-        <Issue key={indexData} data={data} />
+        <Issue
+          key={indexData}
+          data={data}
+          handleClick={n => props.handleClick(n)}
+        />
       ))}
     </div>
   );
