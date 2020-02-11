@@ -6,6 +6,7 @@ import { OpenIssue } from "./Github/Issue/OpenIssue";
 
 function App() {
   const url = new URL(window.location.href);
+  const query = url.searchParams.get("state");
   const page = url.searchParams.get("page");
   const number = url.searchParams.get("number");
   let issue = {};
@@ -29,6 +30,7 @@ function App() {
           component={props => (
             <ContainerIssues
               page={page}
+              query={query}
               {...props}
               handleClick={n => getDataIssue(n)}
             />

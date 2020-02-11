@@ -11,10 +11,13 @@ export class ContainerIssues extends React.Component {
       data: [],
       infoRepository: {},
       page: props.page ? props.page : 1,
-      pageCount: 0
+      pageCount: 0,
+      query: props.query
     };
 
-    getData(this.state.page).then(data => this.setState({ data: data }));
+    getData(this.state.page, this.state.query).then(data =>
+      this.setState({ data: data })
+    );
     getInfoAboutRepo().then(data =>
       this.setState({
         infoRepository: data,
@@ -24,9 +27,9 @@ export class ContainerIssues extends React.Component {
   }
 
   pushPage(n) {
-    getData(n).then(data => {
+    getData(n, this.state.query).then(data => {
       scrollUp();
-      this.props.history.push(`?page=${n}`);
+      this.props.history.push(`?page=${n}&state=${this.state.query}`);
       this.setState({ data: data, page: n });
     });
   }
@@ -39,10 +42,23 @@ export class ContainerIssues extends React.Component {
   render() {
     return (
       <div className="box-container">
+        <form
+          className="filter"
+          action={`${window.location.href}`}
+          method="get"
+        >
+          <input
+            type="text"
+            name="state"
+            placeholder={this.state.query ? this.state.query : "Filter..."}
+          />
+        </form>
+
         <IssuesInPage
           data={this.state.data}
           handleClick={n => this.pushIssue(n)}
         />
+
         <div className="pagination">
           <ReactPaginate
             disableInitialCallback={true}

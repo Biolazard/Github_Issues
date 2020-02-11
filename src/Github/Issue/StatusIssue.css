@@ -1,5 +1,11 @@
-.status-issue {
+.status-issue-open {
   width: 14px;
   height: 14px;
   fill: #28a745;
+}
+
+.status-issue-closed {
+  width: 14px;
+  height: 14px;
+  fill: red;
 }
